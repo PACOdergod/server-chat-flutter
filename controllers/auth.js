@@ -6,7 +6,10 @@ const { generarJWT } = require('../helpers/JWT');
 
 
 const crearUsuario = async (req, res = response)=>{ 
+
     const { email,password } = req.body;
+
+    console.log(email, password);
     
     try {
 
@@ -78,6 +81,7 @@ const logIn = async (req, res = response)=>{
             ok: true,
             usuario:{
                 id: usuarioDB.id,
+                nombre: usuarioDB.nombre,
                 email:usuarioDB.email,
             },
             token
